@@ -1,0 +1,55 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Plataforma educativa · Un ciclo continuo</title><style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none}
+html,body{width:100%;height:100%;background:#0e0f1f;overflow:hidden;touch-action:none}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0;overflow:hidden;background:#fbfbfb}
+#root{position:absolute;inset:0;width:1920px;height:1080px}
+.hot{position:absolute;border-radius:50%;cursor:pointer;transform:translate(-50%,-50%)}
+.hot i{position:absolute;inset:0;border-radius:50%;border:4px solid #3b82f6;opacity:0}
+.vid{position:absolute;inset:0;width:1920px;height:1080px;visibility:hidden;opacity:0;background:#fbfbfb}
+</style></head><body><div id="stage">
+<img id="root" src="assets/v3/root_A.png" alt="">
+<div id="hots"></div>
+<div id="vids"></div><div id="load" style="position:absolute;left:0;right:0;bottom:24px;text-align:center;font:600 22px system-ui;color:#1c1e4d;opacity:.7">Cargando videos… <span id="pct">0</span>%</div>
+</div>
+<script src="vendor/gsap.min.js"></script>
+<script>
+const $=s=>document.querySelector(s);const stage=$('#stage');
+function fit(){const k=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform=`translate(${-960*k}px,${-540*k}px) scale(${k})`;}addEventListener('resize',fit);fit();
+const V=(new URLSearchParams(location.search).get('v')||'A').toUpperCase();
+const POS={A:[[540,370],[1380,370],[1380,790],[540,790],280],B:[[330,520],[750,520],[1170,520],[1590,520],320],C:[[575,384],[1345,384],[1345,836],[575,836],270]}[V];
+$('#root').src=`assets/v3/root_${V}.png`;
+const NAMES=['generar','ensenar','medir','adaptar'];
+// load all loops fully into memory, one <video> per stage
+const vids=[],ready=[false,false,false,false];let done=0;
+function upd(){$('#pct').textContent=Math.round(done/4*100);if(done===4)gsap.to('#load',{opacity:0,duration:.6});}
+NAMES.forEach((n,i)=>{const v=document.createElement('video');v.className='vid';v.muted=true;v.loop=true;v.playsInline=true;v.preload='auto';
+ v.setAttribute('muted','');v.setAttribute('playsinline','');v.poster=`assets/poster/${n}.jpg`;$('#vids').appendChild(v);vids[i]=v;
+ const setSrc=src=>{v.src=src;v.load();};
+ const go=(tries)=>fetch(`loops/${n}.mp4`,{cache:'force-cache'}).then(r=>{if(!r.ok)throw 0;return r.blob();}).then(b=>{setSrc(URL.createObjectURL(b));})
+  .catch(()=>{if(tries>0)setTimeout(()=>go(tries-1),800);else setSrc(`loops/${n}.mp4`);});
+ v.addEventListener('canplaythrough',()=>{if(!ready[i]){ready[i]=true;done++;upd();}},{once:false});
+ v.addEventListener('error',()=>{setTimeout(()=>setSrc(`loops/${n}.mp4?r=${Date.now()}`),500);});
+ go(3);});
+let vid=null;
+function safePlay(v){const p=v.play();if(p&&p.catch)p.catch(()=>setTimeout(()=>{if(vid===v)safePlay(v);},300));}
+// watchdog: if the visible video stalls, nudge it
+setInterval(()=>{if(!vid)return;if(vid.paused||vid.readyState<3){if(vid.readyState<2&&vid.networkState===3){vid.load();}safePlay(vid);}},1000);
+POS.slice(0,4).forEach(([x,y],i)=>{const h=document.createElement('div');h.className='hot';h.style.cssText=`left:${x}px;top:${y}px;width:${POS[4]}px;height:${POS[4]}px`;h.innerHTML='<i></i>';
+ h.addEventListener('pointerup',e=>{e.stopPropagation();open(i);});$('#hots').appendChild(h);
+ gsap.fromTo(h.firstChild,{scale:.9,opacity:.5},{scale:1.2,opacity:0,duration:2.2,repeat:-1,ease:'power2.out',delay:i*.55});});
+let cur=-1,busy=false;
+function open(i){if(busy)return;busy=true;cur=i;const [x,y]=POS[i];vid=vids[i];try{vid.currentTime=0;}catch(e){}safePlay(vid);
+ gsap.set(vid,{visibility:'visible',transformOrigin:`${x}px ${y}px`});
+ gsap.timeline({onComplete:()=>busy=false})
+  .to('#root,#hots',{scale:2.2,opacity:0,transformOrigin:`${x}px ${y}px`,duration:.9,ease:'power3.inOut'},0)
+  .fromTo(vid,{scale:.25,opacity:0},{scale:1,opacity:1,duration:.9,ease:'power3.inOut'},.05);}
+function close(){if(busy||cur<0)return;busy=true;const [x,y]=POS[cur];
+ gsap.timeline({onComplete:()=>{vid.pause();gsap.set(vid,{visibility:'hidden'});vid=null;cur=-1;busy=false;}})
+  .to(vid,{scale:.25,opacity:0,duration:.8,ease:'power3.inOut'},0)
+  .fromTo('#root,#hots',{scale:2.2,opacity:0},{scale:1,opacity:1,duration:.8,ease:'power3.inOut'},0);}
+stage.addEventListener('pointerup',()=>{if(cur>=0)close();});
+addEventListener('keydown',e=>{if(e.key==='Escape')close();else if(['ArrowRight',' ','Enter'].includes(e.key)){if(cur<0)open(0);else{const n=(cur+1)%4;close();setTimeout(()=>open(n),850);}}else if(e.key==='ArrowLeft'){if(cur>=0)close();}else if(e.key==='f')document.documentElement.requestFullscreen?.();});
+document.addEventListener('dblclick',()=>document.documentElement.requestFullscreen?.());
+window.__open=open;window.__close=close;
+</script></body></html>
