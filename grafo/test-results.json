@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "screens": 7,
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:8876/",
+    "http://127.0.0.1:8876/assets/style.css",
+    "http://127.0.0.1:8876/assets/deck.js",
+    "http://127.0.0.1:8876/assets/fonts/Poppins-SemiBold.ttf",
+    "http://127.0.0.1:8876/assets/fonts/Poppins-Regular.ttf",
+    "http://127.0.0.1:8876/assets/fonts/Poppins-Light.ttf",
+    "http://127.0.0.1:8876/assets/fonts/Lato-Regular.ttf"
+  ],
+  "checks": [
+    "all seven screens",
+    "gap progression",
+    "prerequisite chain",
+    "three diagnostic states",
+    "five moments",
+    "both adaptive branches",
+    "both tabs and detail",
+    "keyboard and click navigation",
+    "fullscreen F and double click",
+    "1280x720 scaling",
+    "touch swipe and interaction",
+    "offline file load"
+  ]
+}
