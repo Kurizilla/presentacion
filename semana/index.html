@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#2B50C8"><link rel="icon" href="data:,"><title>This Week · GOES with X</title><link rel="stylesheet" href="assets/style.css"><link rel="stylesheet" href="assets/semana.css"><script defer src="assets/deck.js"></script></head>
+<body><main id="stage" aria-label="This week: GOES with X">
+
+<!-- SLIDE 1 · THIS WEEK (intentionally sparse: the project manager fills the dashed placeholders) -->
+<section class="slide cover week active" data-title="This week" aria-label="This week">
+<svg class="cover-graph week-graph" viewBox="0 0 700 850" role="img" aria-label="Network of connected learning goals"><g fill="none" stroke="#8ca5f0" stroke-width="3"><path d="M100 160L340 85L595 220L475 460L655 685M100 160L235 370L340 85M235 370L475 460L325 730L160 625L235 370L325 730"/></g><g fill="#2B50C8" stroke="white" stroke-width="4"><circle cx="100" cy="160" r="25"/><circle cx="340" cy="85" r="25"/><circle cx="595" cy="220" r="25"/><circle cx="235" cy="370" r="25"/><circle cx="475" cy="460" r="36" fill="white"/><circle cx="655" cy="685" r="25"/><circle cx="325" cy="730" r="25"/><circle cx="160" cy="625" r="25"/></g></svg>
+<div class="cover-copy week-copy"><div class="short-rule"></div><h1>This week</h1><p>X’s team came to work with us.<br>A week of heavy iteration: content generation,<br>feature review and bug fixing.</p></div>
+<div class="pm-row" aria-label="Placeholders for the project manager">
+<!-- PM: replace each "—" with a figure and each label with what it measures -->
+<div class="pm-box"><span class="pm-tag">To be filled by PM</span><b>—</b><p>Metric</p></div>
+<div class="pm-box"><span class="pm-tag">To be filled by PM</span><b>—</b><p>Metric</p></div>
+<div class="pm-box"><span class="pm-tag">To be filled by PM</span><b>—</b><p>Metric</p></div>
+<div class="pm-box pm-list"><span class="pm-tag">To be filled by PM</span><ul><li>Highlight</li><li>Highlight</li><li>Highlight</li></ul></div>
+</div>
+<div class="cover-meta">GOVERNMENT OF EL SALVADOR (GOES) <span>·</span> WITH TECHNOLOGY PARTNER X <span>·</span> WEEK OF NOVEMBER 9, 2026</div></section>
+
+<!-- SLIDE 2 · CONTENT GENERATION -->
+<section class="slide" data-title="Content generation"><header><span>GOES</span><i></i><span>01 / CONTENT GENERATION</span></header>
+<div class="intro compact"><span class="num">1</span><div><p class="eyebrow">Content generation</p><h2>Content generation is now automated.</h2><p class="lead">One modular pipeline, built with Cursor, publishing into the LXP through its MCP.</p></div></div>
+<div class="cg-layout"><div class="cg-main">
+<ol class="pipe" aria-label="Pipeline">
+<li><span>1</span><b>Inputs</b><p>Curriculum, knowledge graph and standards</p></li><li class="pipe-arrow" aria-hidden="true">→</li>
+<li><span>2</span><b>Generate</b><p>AI agents write each learning object</p></li><li class="pipe-arrow" aria-hidden="true">→</li>
+<li><span>3</span><b>Audit</b><p>Checks and AI judges; if it fails, regenerate or human review</p></li><li class="pipe-arrow" aria-hidden="true">→</li>
+<li class="pipe-out"><span>4</span><b>Publish</b><p>Into the LXP via MCP: lesson, practice, assessment, review</p></li></ol>
+<div class="std-head"><p>FOUR MODULAR STANDARDS <small>· they drive both generation and audit · tap one</small></p></div>
+<div class="stds">
+<button class="std" data-std="Safeguards"><em>01</em><b>Safeguards</b><p>What content must never talk about</p></button>
+<button class="std" data-std="Structural"><em>02</em><b>Structural</b><p>How each object is built; realigned to X’s adaptive schema</p></button>
+<button class="std" data-std="Pedagogical"><em>03</em><b>Pedagogical</b><p>The best teaching principle, and when to use it</p></button>
+<button class="std" data-std="Editorial"><em>04</em><b>Editorial</b><p>Image style, typography, colours and sizes</p></button>
+</div>
+<div class="unlocks" id="std-response" aria-live="polite"><p><b>↑</b>Scale, in a controlled way</p><p><b>⇄</b>Adjust one standard without touching the rest</p></div>
+</div>
+<aside class="xside"><p class="xside-eyebrow">ADVANCES ON X’S SIDE</p>
+<div class="xitem"><div class="xicon">▶</div><div><h3>Video</h3><p>Strong videos in multiple aspect ratios, formats and content types.</p></div></div>
+<div class="xitem"><div class="xicon">&lt;/&gt;</div><div><h3>Native HTML</h3><p>The LXP reads it: it knows when an HTML holds an exercise, and whether the answer is right.</p><ul class="xchips"><li>Simulators</li><li>Self-grading</li><li>Editable in the tool</li></ul></div></div>
+</aside></div>
+<p class="caption bottom-caption cg-caption">Pilot run today: 20 topics × 4 learning objects, generated and published end to end.</p></section>
+
+<!-- SLIDE 3 · KNOWLEDGE GRAPH -->
+<section class="slide" data-title="Knowledge graph"><header><span>GOES</span><i></i><span>02 / KNOWLEDGE GRAPH</span></header>
+<div class="split kg-split"><div class="editorial"><span class="num">2</span><p class="eyebrow">Knowledge graph</p><h2>One graph in.<br>All the content out.</h2><p class="lead">A pre-validated map of the prerequisites<br>and relations between concepts.</p>
+<ol class="ver-steps" aria-label="Graph lifecycle"><li>Version</li><li aria-hidden="true">→</li><li>Release</li><li aria-hidden="true">→</li><li>Deploy</li></ol><p class="ver-note">At will, and keep optimizing.</p></div>
+<div class="graph-side"><div class="graph-panel kg-panel" id="kg-panel"><svg class="kg-svg" viewBox="0 0 1000 560" aria-hidden="true"><defs><marker id="kg-ah" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1L10 5L0 9z" fill="#fff"/></marker></defs><line class="kg-lane" x1="150" x2="985" y1="62" y2="62"/><line class="kg-lane" x1="150" x2="985" y1="182" y2="182"/><line class="kg-lane" x1="150" x2="985" y1="302" y2="302"/><line class="kg-lane" x1="150" x2="985" y1="422" y2="422"/><g class="kg-edges"><path class="kg-edge" data-from="n7" data-to="n12" d="M555 182C555 242.0 555 242.0 555 302"/><path class="kg-edge" data-from="n11" data-to="n12" d="M380 302L555 302"/><path class="kg-edge" data-from="n11" data-to="n13" d="M380 302Q555.0 252 730 302"/><path class="kg-edge" data-from="n12" data-to="n13" d="M555 302L730 302"/><path class="kg-edge" data-from="n11" data-to="n14" d="M380 302Q642.5 232 905 302"/><path class="kg-edge" data-from="n12" data-to="n14" d="M555 302Q730.0 252 905 302"/><path class="kg-edge" data-from="n13" data-to="n14" d="M730 302L905 302"/><path class="kg-edge" data-from="n7" data-to="n1" d="M555 182C555 122.0 380 122.0 380 62"/><path class="kg-edge" data-from="n0" data-to="n1" d="M205 62L380 62"/><path class="kg-edge" data-from="n6" data-to="n2" d="M380 182C380 122.0 555 122.0 555 62"/><path class="kg-edge" data-from="n0" data-to="n2" d="M205 62Q380.0 12 555 62"/><path class="kg-edge" data-from="n1" data-to="n2" d="M380 62L555 62"/><path class="kg-edge" data-from="n0" data-to="n3" d="M205 62Q467.5 -8 730 62"/><path class="kg-edge" data-from="n1" data-to="n3" d="M380 62Q555.0 12 730 62"/><path class="kg-edge" data-from="n0" data-to="n4" d="M205 62Q555.0 -28 905 62"/><path class="kg-edge" data-from="n1" data-to="n4" d="M380 62Q642.5 -8 905 62"/><path class="kg-edge" data-from="n3" data-to="n4" d="M730 62L905 62"/><path class="kg-edge" data-from="n17" data-to="n18" d="M555 422L730 422"/><path class="kg-edge" data-from="n17" data-to="n19" d="M555 422Q730.0 372 905 422"/><path class="kg-edge" data-from="n18" data-to="n19" d="M730 422L905 422"/><path class="kg-edge" data-from="n6" data-to="n7" d="M380 182L555 182"/><path class="kg-edge" data-from="n5" data-to="n8" d="M205 182Q467.5 112 730 182"/><path class="kg-edge" data-from="n6" data-to="n8" d="M380 182Q555.0 132 730 182"/><path class="kg-edge" data-from="n7" data-to="n8" d="M555 182L730 182"/><path class="kg-edge" data-from="n5" data-to="n9" d="M205 182Q555.0 92 905 182"/><path class="kg-edge" data-from="n6" data-to="n9" d="M380 182Q642.5 112 905 182"/><path class="kg-edge" data-from="n7" data-to="n9" d="M555 182Q730.0 132 905 182"/><path class="kg-edge" data-from="n8" data-to="n9" d="M730 182L905 182"/></g></svg>
+<div class="kg-lane-name" style="top:11.071%">Ratios and<br>fractions</div>
+<div class="kg-lane-name" style="top:32.500%">Equal<br>groups</div>
+<div class="kg-lane-name" style="top:53.929%">Volume of<br>prisms</div>
+<div class="kg-lane-name" style="top:75.357%">Tenths</div>
+<button class="kg-node" id="n0" data-pre="" data-full="How many times one quantity is another" style="left:20.5%;top:11.071%" aria-label="How many times one quantity is another"><i></i><b>How many times</b></button>
+<button class="kg-node" id="n1" data-pre="n7 n0" data-full="Finding the compared quantity from the reference" style="left:38.0%;top:11.071%" aria-label="Finding the compared quantity from the reference"><i></i><b>Compared quantity</b></button>
+<button class="kg-node" id="n2" data-pre="n6 n0 n1" data-full="Recovering the base quantity" style="left:55.5%;top:11.071%" aria-label="Recovering the base quantity"><i></i><b>Base quantity</b></button>
+<button class="kg-node" id="n3" data-pre="n0 n1" data-full="Ratios expressed as fractions" style="left:73.0%;top:11.071%" aria-label="Ratios expressed as fractions"><i></i><b>Ratio as fraction</b></button>
+<button class="kg-node" id="n4" data-pre="n0 n1 n3" data-full="Finding the first term of a ratio" style="left:90.5%;top:11.071%" aria-label="Finding the first term of a ratio"><i></i><b>First term of a ratio</b></button>
+<button class="kg-node" id="n5" data-pre="" data-full="Counting collections in equal groups" style="left:20.5%;top:32.500%" aria-label="Counting collections in equal groups"><i></i><b>Equal groups</b></button>
+<button class="kg-node" id="n6" data-pre="" data-full="Multiplication as items per group" style="left:38.0%;top:32.500%" aria-label="Multiplication as items per group"><i></i><b>Items per group</b></button>
+<button class="kg-node" id="n7" data-pre="n6" data-full="From multiplication to repeated addition" style="left:55.5%;top:32.500%" aria-label="From multiplication to repeated addition"><i></i><b>Repeated addition</b></button>
+<button class="kg-node" id="n8" data-pre="n5 n6 n7" data-full="Building the times table of 2" style="left:73.0%;top:32.500%" aria-label="Building the times table of 2"><i></i><b>Times table of 2</b></button>
+<button class="kg-node" id="n9" data-pre="n5 n6 n7 n8" data-full="Recalling products of 2 in any order" style="left:90.5%;top:32.500%" aria-label="Recalling products of 2 in any order"><i></i><b>Products of 2</b></button>
+<button class="kg-node" id="n10" data-pre="" data-full="Comparing volume by counting cubes" style="left:20.5%;top:53.929%" aria-label="Comparing volume by counting cubes"><i></i><b>Count cubes</b></button>
+<button class="kg-node" id="n11" data-pre="" data-full="The cubic centimetre" style="left:38.0%;top:53.929%" aria-label="The cubic centimetre"><i></i><b>Cubic centimetre</b></button>
+<button class="kg-node" id="n12" data-pre="n7 n11" data-full="Cubes per layer and number of layers" style="left:55.5%;top:53.929%" aria-label="Cubes per layer and number of layers"><i></i><b>Cubes × layers</b></button>
+<button class="kg-node" id="n13" data-pre="n11 n12" data-full="Volume formula for a rectangular prism" style="left:73.0%;top:53.929%" aria-label="Volume formula for a rectangular prism"><i></i><b>Volume formula</b></button>
+<button class="kg-node" id="n14" data-pre="n11 n12 n13" data-full="Volume of solids made of prisms" style="left:90.5%;top:53.929%" aria-label="Volume of solids made of prisms"><i></i><b>Composite prisms</b></button>
+<button class="kg-node" id="n15" data-pre="" data-full="Tenths of a metre less than one" style="left:20.5%;top:75.357%" aria-label="Tenths of a metre less than one"><i></i><b>Tenths below 1</b></button>
+<button class="kg-node" id="n16" data-pre="" data-full="Whole metres and tenths" style="left:38.0%;top:75.357%" aria-label="Whole metres and tenths"><i></i><b>Metres and tenths</b></button>
+<button class="kg-node" id="n17" data-pre="" data-full="Placing tenths on the number line" style="left:55.5%;top:75.357%" aria-label="Placing tenths on the number line"><i></i><b>Tenths on a line</b></button>
+<button class="kg-node" id="n18" data-pre="n17" data-full="Comparing numbers with tenths" style="left:73.0%;top:75.357%" aria-label="Comparing numbers with tenths"><i></i><b>Compare tenths</b></button>
+<button class="kg-node" id="n19" data-pre="n17 n18" data-full="Comparing tenths written as decimals or fractions" style="left:90.5%;top:75.357%" aria-label="Comparing tenths written as decimals or fractions"><i></i><b>Decimal or fraction</b></button><div class="graph-label kg-label" id="kg-response" aria-live="polite">Tap a topic to see what it builds on.</div></div>
+<div class="scope kg-scope"><div class="scope-num"><b>20</b><span>topics<br>in 4 units</span></div><div class="scope-num"><b>28</b><span>prerequisite<br>links</span></div><div class="scope-num"><b>80</b><span>learning objects<br>from one pass</span></div><div class="scope-num"><b>2</b><span>releases<br>deployed today</span></div></div></div></div>
+<p class="caption bottom-caption">Real graph of the demo course “Fractions and volume” (Grade 6), read from the LXP. Topic titles translated from Spanish.</p></section>
+
+<!-- SLIDE 4 · OPERATING PLAN -->
+<section class="slide" data-title="Operating plan"><header><span>GOES</span><i></i><span>03 / OPERATING PLAN</span></header>
+<div class="intro compact"><span class="num">3</span><div><p class="eyebrow">Operating plan</p><h2>Listen. Analyze. Patch. Improve.</h2><p class="lead">Content and graph, tuned together with real-time data from X’s API.</p></div></div>
+<div class="loop" id="loop" data-mode="content">
+<svg viewBox="0 0 1730 250" aria-hidden="true"><defs><marker id="lp-ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2B50C8"/></marker></defs><path class="loop-rail" d="M175 62H1555"/><path class="loop-back" d="M1555 198C1555 266 175 266 175 198" marker-end="url(#lp-ah)"/></svg>
+<div class="lnode" style="left:175px"><i>◉</i><b>Listen</b><em>Real-time data from X’s API</em></div>
+<div class="lnode" style="left:520px"><i>≡</i><b>Analyze</b><em>Bottlenecks in content and graph</em></div>
+<div class="lnode lnode-decide" style="left:865px"><i>?</i><b>Human needed?</b><em id="decide-label">No: an agent patches it</em></div>
+<div class="lnode" style="left:1210px"><i>✎</i><b>Rewrite &amp; patch</b><em id="patch-label">The content</em></div>
+<div class="lnode" style="left:1555px"><i>↻</i><b>Improve</b><em>Feedback makes the system better</em></div>
+<div class="loop-tag">Feedback loop</div></div>
+<div class="actions">
+<button class="action selected" id="act-content" data-mode="content"><span class="act-kind">CONTENT PATCH</span><h3>Children get stuck on a question</h3><p>An agent rewrites it and patches the content automatically, when no human is needed.</p><span class="act-pill">Automatic when safe</span></button>
+<button class="action" id="act-graph" data-mode="graph"><span class="act-kind">GRAPH PATCH</span><h3>Real data reveals a wrong relation</h3><p>We catch it and patch the graph near real time, with a human in the loop.</p><span class="act-pill">Human in the loop</span></button>
+<div class="action learned"><!-- PLACEHOLDER: findings to be added later --><span class="act-kind">WHAT WE’VE LEARNED</span><span class="pm-tag dark">To be added</span><ul><li></li><li></li><li></li></ul></div>
+</div>
+<p class="caption bottom-caption">Plan in design. X’s real-time API is still to be delivered.</p></section>
+
+<footer id="navigation"><span id="footer-label">This week · GOES with X</span><div class="nav-center"><button id="prev" aria-label="Previous slide" title="Previous slide">←</button><div id="dots" aria-label="Go to slide"></div><button id="next" aria-label="Next slide" title="Next slide">→</button></div><button id="fullscreen" aria-label="Full screen" title="Full screen (F or double-click)">⛶</button></footer><div id="announcer" class="sr-only" aria-live="polite"></div>
+</main></body></html>
